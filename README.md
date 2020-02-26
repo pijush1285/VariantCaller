@@ -27,7 +27,7 @@ In this section I enlist the tools which are used for variant calling operation.
 
 + **Download Url:** 
 
-<font size="2">|ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/131219_D00360_005_BH814YADXX/Project_RM8398/Sample_U0a/|</font>
+<font size="2">ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/131219_D00360_005_BH814YADXX/Project_RM8398/Sample_U0a/</font>
 
 
 
