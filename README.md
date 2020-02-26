@@ -39,7 +39,9 @@ Download Url: https://github.com/ewels/MultiQC
 ~~~
 
 
-<font size="5">**2. RAW DATASET**</font>
+<font size="5">**2. DATA SETS**</font>
+
++ *Raw Data sets*
 
 A slanderous practice data set is provided here to run the entire variance calling the pipeline. The user can easily download the entire data set on their local server and run the pipeline easily.
 
@@ -52,6 +54,6 @@ A slanderous practice data set is provided here to run the entire variance calli
 <font size="2">ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/131219_D00360_005_BH814YADXX/Project_RM8398/Sample_U0a/</font>
 
 
-
++ *Reference data set*
 
 
