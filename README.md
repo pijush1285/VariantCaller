@@ -45,15 +45,17 @@ Download Url: https://github.com/ewels/MultiQC
 
 A slanderous practice data set is provided here to run the entire variance calling the pipeline. The user can easily download the entire data set on their local server and run the pipeline easily.
 
-+ **Sample:** *Sample_U0a*
-+ **Project:** *Project_RM8398*
-+ **Sequencer:** *HiSeq_300x*
-
-+ **Download Url:** 
+ **Sample:** *Sample_U0a*
+ **Project:** *Project_RM8398*
+ **Sequencer:** *HiSeq_300x*
+ **Download Url:** 
 
 <font size="2">ftp://ftp-trace.ncbi.nlm.nih.gov/giab/ftp/data/NA12878/NIST_NA12878_HG001_HiSeq_300x/131219_D00360_005_BH814YADXX/Project_RM8398/Sample_U0a/</font>
 
 
 + *Reference data set*
 
+A reference genome (also known as a reference assembly) is a database of the digital nucleic acid sequence, assembled by scientists as a representative example of a set of genes for a species. In this pipeline I have used GRCh38 for mapping the fastq files.
+
+Download Url: https://www.ncbi.nlm.nih.gov/grc/human
 
