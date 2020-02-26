@@ -4,20 +4,20 @@ Initially a .sh file will be given which contains a newly build variant calling 
 Gradually the whole section will be illustrated.
 
 
-1. TOOLS
+<font size="4">**1. TOOLS**</font>
 There are lots of available tools for varient calling. Some combination of tools produces best variant call result.
 In this section I enlist the tools which are used for variant calling operation.
 
-a. GATK 
-b. picard
-c. samtools
-d. bwa
-e. bamtools
-f. FastQC
-g. MultiQC
++ **a. GATK** 
++ **b. picard**
++ **c. samtools**
++ **d. bwa**
++ **e. bamtools**
++ **f. FastQC**
++ **g. MultiQC**
 
 
-2. RAW DATASET
+<font size="4">**2. RAW DATASET**</font>
 
 Sample: Sample_U0a
 Project: Project_RM8398
