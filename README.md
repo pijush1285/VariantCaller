@@ -44,3 +44,10 @@ Download Url: https://www.ncbi.nlm.nih.gov/grc/human
 Another essential thing that is needed for variant calling is the SNP database. A download link for downloading the SNP database is provided here below. 
 
 Download Url: ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606_b151_GRCh38p7/VCF/
+
+
+<font size="4">**3. Basic workflow of this pipeline**</font>
+
+This pipeline works very simply, executing various functions from different packages, step by step. The novices just need to understand the functionality of those functions. After a few successful executions of this pipeline with different data sets, it will be more flexible for the user to control input arguments that are needed for these functions.
+
+
