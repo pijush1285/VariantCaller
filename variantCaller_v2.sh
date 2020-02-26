@@ -1,21 +1,12 @@
 #!/bin/bash
 
-#only for LONG READS mapping
-#USAGE: runMapper.sh minimap2 ref.fa reads.fa/fq 48 ont default/strict
-
 echo -e "-----------------------------------------------------------------------------"
 echo -e "                                                                             "
-echo -e "This is a bash scrip to map your long reads and make it visualization ready !"
+echo -e "This script will perform the variant calling operation step by step !"
 echo -e "                                                                             "
 echo -e "-----------------------------------------------------------------------------"
 
-#################################################################################################################
-#For transfer the program file from server to local machine
-#scp wsu28@10.10.4.201:/data/sata_data/workshop/wsu28/variantCaller/variantCaller.sh /home/icgc-main/Desktop/asdf
 
-#For transfer the program file from local machine to server
-#scp /home/icgc-main/Desktop/asdf/variantCaller_v2.sh wsu28@10.10.4.201:/data/sata_data/workshop/wsu28/variantCaller
-#################################################################################################################
 
 ######################################################################################
 #            This portion of code is used for alignment and fastQC
@@ -37,8 +28,9 @@ refFasta=/data/sata_data/workshop/wsu28/reference/hg38.fa
 #cat U0a_CGATGT_L001_R1_00*.fastq > U0a_CGATGT_L001_R1_Marged.fastq
 #cat U0a_CGATGT_L001_R2_00*.fastq > U0a_CGATGT_L001_R2_Marged.fastq
 
-
-#Location of the raw reads
+##############################################################################################
+#                                 Location of the raw reads
+##############################################################################################
 longReadsL1R1S1=/data/sata_data/workshop/wsu28/rawdata/Sample_U0a/U0a_CGATGT_L001_R1_001.fastq
 longReadsL1R1S2=/data/sata_data/workshop/wsu28/rawdata/Sample_U0a/U0a_CGATGT_L001_R1_002.fastq
 longReadsL1R1S3=/data/sata_data/workshop/wsu28/rawdata/Sample_U0a/U0a_CGATGT_L001_R1_003.fastq
@@ -342,73 +334,57 @@ rm GatherAllBAMs.bam
 ############################################################################################
 
 
-# #Now make a folder which contains the broken bam file chromosom wise.
-# GatherBam="5_GatherBam"
-# if [ ! -d $OutPutPath$samplelabel/$GatherBam ]; then
-#   mkdir -p $OutPutPath$samplelabel/$GatherBam;
-# fi
-#
-#
-# #New Directory location
-# OutPutDir5=$OutPutPath$samplelabel/$GatherBam
-#
-# #Copy the GatherAllBAMs.bam file in to ChromosomWiseBreak directory
-# cp $OutPutDir3/GatherAllBAMs.bam $OutPutDir5
-#
-# #Now change the directory
-# cd $OutPutDir5
-#
-# $gatk --java-options "-Xmx4g" HaplotypeCaller \
-#      -R $refFasta \
-#      -I GatherAllBAMs.bam \
-#      --dbsnp $goldRndelsVCF \
-#      -O GatherAllBAMs.vcf \
-#      -bamout GatherAllBAMs_bamout.bam
-#
-#
-#
-#
-#
-#
-# echo "HaplotypeCaller calling end"
-# echo "--------------------------------------------------"
-#
-# ###################################################################
-#
-# $picard BuildBamIndex \
-#  -I GatherAllBAMs.bam \
-#  -O GatherAllBAMs.bai \
-#  >GatherAllBAMs_bamindex.out 2>GatherAllBAMs_bamindex.err
-#
-#
-#
-#
-#  #Sorted the align sam file to converted into sorted reads
-# java -jar $picard SortSam \
-#       I=$margedMappedReads \
-#       O=$sortedRead \
-#       SORT_ORDER=coordinate
-#
-#
+#Now make a folder which contains the broken bam file chromosom wise.
+GatherBam="5_GatherBam"
+if [ ! -d $OutPutPath$samplelabel/$GatherBam ]; then
+  mkdir -p $OutPutPath$samplelabel/$GatherBam;
+fi
 
 
- #$samtools index /data/sata_data/workshop/wsu28/vcResults/Sample_U0a1000/5_ChromosomWiseBreak/GatherAllBAMs.REF_chr20.bam
+#New Directory location
+OutPutDir5=$OutPutPath$samplelabel/$GatherBam
 
-    #   OutPutDir4=/data/sata_data/workshop/wsu28/vcResults/Sample_U0a1000/5_ChromosomWiseBreak
+#Copy the GatherAllBAMs.bam file in to ChromosomWiseBreak directory
+cp $OutPutDir3/GatherAllBAMs.bam $OutPutDir5
 
-       #List the file names
-    #   ls $OutPutDir4 > fname.txt
-
-    #   cat fname.txt | while read LINE; do
-    #       echo $LINE
-    #   done
+#Now change the directory
+cd $OutPutDir5
 
 
 
-    #   GatherAllBAMs.REF_chr10.bam
+#Sorted the align sam file to converted into sorted reads
+java -jar $picard SortSam \
+     I=GatherAllBAMs.bam \
+     O=GatherAllBAMs_sorted.bam \
+     SORT_ORDER=coordinate
+
+
+#Now creating the index file.
+java -jar $picard BuildBamIndex \
+      -I GatherAllBAMs_sorted.bam \
+      -O GatherAllBAMs.bai \
+      >GatherAllBAMs_bamindex.out 2>GatherAllBAMs_bamindex.err
+
+
+echo "BAM file indexing operation is ended......"
+echo "--------------------------------------------------"
+
+
+############################################################################################
+#              Now Haplotype call operation using GATK
+############################################################################################
+
+#Now Haplotype call operation will be performed.
+$gatk --java-options "-Xmx4g" HaplotypeCaller \
+     -R $refFasta \
+     -I GatherAllBAMs.bam \
+     --dbsnp $goldRndelsVCF \
+     -O GatherAllBAMs.vcf.gz \
+     -bamout GatherAllBAMs_bamout.bam
 
 
 
-    #   goldRndelsVCF=/data/sata_data/workshop/wsu28/vcf1/1000G_phase1.snps.high_confidence.hg38.vcf.gz
-    #   refFasta=/data/sata_data/workshop/wsu28/reference/hg38.fa
-    #   gatk=/data/sata_data/workshop/wsu28/packages/gatk/gatk
+echo "HaplotypeCaller calling operation is ended....."
+echo "--------------------------------------------------"
+
+#############################################################################################
