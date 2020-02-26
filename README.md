@@ -9,6 +9,7 @@ There are lots of available tools for varient calling. Some combination of tools
 In this section I enlist the tools which are used for variant calling operation.
 
 + **GATK** 
++ *Download Url: https://github.com/broadinstitute/gatk*
 + **picard**
 + **samtools**
 + **bwa**
