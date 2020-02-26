@@ -5,7 +5,8 @@ Gradually the whole section will be illustrated.
 
 
 <font size="4">**1. TOOLS**</font>
-+There are lots of available tools for varient calling. Some combination of tools produces best variant call result.
+
+There are lots of available tools for varient calling. Some combination of tools produces best variant call result.
 In this section I enlist the tools which are used for variant calling operation.
 
 + **GATK** 
