@@ -48,6 +48,9 @@ Download Url: ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606_b151_GRCh38p7/
 
 <font size="4">**3. Basic workflow of this pipeline**</font>
 
-This pipeline works very simply, executing various functions from different packages, step by step. The novices just need to understand the functionality of those functions. After a few successful executions of this pipeline with different data sets, it will be more flexible for the user to control input arguments that are needed for these functions.
+This pipeline works very simply, executing various functions from different packages, step by step. The novices just need to understand the functionality of those functions. After a few successful executions of this pipeline with different data sets, it will be more flexible for the user to control input arguments that are needed for these functions. Initially the user only require to change tha path of those data sets and run the pipeline using the command given below.
+~~~
+$./variantCaller_v2.sh
+~~~
 
 
