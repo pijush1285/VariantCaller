@@ -4,7 +4,7 @@ Initially a .sh file will be given which contains a newly build variant calling 
 Gradually the whole section will be illustrated.
 
 
-<font size="4">**1. TOOLS**</font>
+<font size="5">**1. TOOLS**</font>
 
 There are lots of available tools for varient calling. Some combination of tools produces best variant call result.
 In this section I enlist the tools which are used for variant calling operation.
@@ -39,7 +39,9 @@ Download Url: https://github.com/ewels/MultiQC
 ~~~
 
 
-<font size="4">**2. RAW DATASET**</font>
+<font size="5">**2. RAW DATASET**</font>
+
+A slanderous practice data set is provided here to run the entire variance calling the pipeline. The user can easily download the entire data set on their local server and run the pipeline easily.
 
 + **Sample:** *Sample_U0a*
 + **Project:** *Project_RM8398*
