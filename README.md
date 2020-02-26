@@ -38,3 +38,9 @@ A reference genome (also known as a reference assembly) is a database of the dig
 
 Download Url: https://www.ncbi.nlm.nih.gov/grc/human
 
+
++ *SNP data set*
+
+Another essential thing that is needed for variant calling is the SNP database. A download link for downloading the SNP database is provided here below. 
+
+Download Url: ftp://ftp.ncbi.nlm.nih.gov/snp/organisms/human_9606_b151_GRCh38p7/VCF/
