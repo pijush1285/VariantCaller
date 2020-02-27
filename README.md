@@ -1,4 +1,11 @@
 # Variant-calling-for-the-beginners
+
+**Variant Calling**
+Variant calling is the mechanism through which variants from the sequence data are found.
++ Execute entire genome or exome sequences to create FASTQ files.
++ Align the sequences by generating BAM or CRAM files to a reference genome.
++ Identify and write to a VCF file where the aligned reads differ from the reference genome.
+
 This pipeline will show you how to make a variant call step by step using different publickly available tools.
 Initially a .sh file will be given which contains a newly build variant calling pipeline.
 Gradually the whole section will be illustrated.
