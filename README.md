@@ -1,7 +1,7 @@
 # Variant-calling-for-the-beginners
 
-**Variant Calling**
-Variant calling is the mechanism through which variants from the sequence data are found.
+**Variant Calling:**
+Variant calling is the mechanism through which variants from the sequence data are found. This process can be exicuted in to three steps. Those steps are given below.
 + Execute entire genome or exome sequences to create FASTQ files.
 + Align the sequences by generating BAM or CRAM files to a reference genome.
 + Identify and write to a VCF file where the aligned reads differ from the reference genome.
