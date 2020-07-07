@@ -104,6 +104,16 @@ echo "Final vcf calling is compleated"
 echo "-------------------------------------------"
 
 
+#Filtering Variants
+#Researchers use external ground truth data in most applications to calibrate a pipeline of calling variants.
+#We don't know the ground truth in our case so we'll explain some filtering choices based on quantitative 
+#statistics like the transition / transversion ratio. Transitions are much more common in most species than 
+#transversions, so we would expect a transition / transversion ratio of around 2 for humans.
+bcftools stats MappedR1R2.var-final.vcf.gz | grep "TSTV"
+bcftools filter -i '%QUAL>20' MappedR1R2.var-final.vcf.gz  | bcftools stats | grep "TSTV"
+bcftools filter -e '%QUAL<=20 || %QUAL/INFO/AO<=2 || SAF<=2 || SAR<=2' MappedR1R2.var-final.vcf.gz  | bcftools stats | grep "TSTV"
+
+
 #In this section we can compaire the vcf files. 
 #Total no of SNP
 $bcftools view -v snps MappedR1R2.var-final.vcf | grep -v "^#" | wc -l
