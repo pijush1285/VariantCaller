@@ -79,4 +79,8 @@ git clone https://github.com/lh3/bwa.git
 cd bwa; make
 ~~~
 
+<font size="5">**5. BWA, Samtools and Bcftools based pipeline**</font>
 <img src="Images/pipeline1.png">
+
+<font size="5">**6. BWA and Gatk based pipeline**</font>
+<img src="Images/pipeline2.png">
