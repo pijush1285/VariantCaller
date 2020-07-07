@@ -129,6 +129,10 @@ tabix -p vcf snp34.vcf.gz
 bcftools view -v snps snp12.vcf | grep -v "^#" | wc -l
 
 
+#Intersect between processed one and the origianl
+bedtools intersect -u -a snp12.vcf.gz -b snp34.vcf.gz | wc -l
+
+
 #Calculate Jaccard index. This code is used for calculating the intersection between two files.
 bedtools jaccard -a snp12.vcf.gz -b snp34.vcf.gz
 
