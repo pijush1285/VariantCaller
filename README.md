@@ -79,4 +79,4 @@ git clone https://github.com/lh3/bwa.git
 cd bwa; make
 ~~~
 
-[](Images/pipeline1.png)
+[](https://github.com/pijush1285/Variant-calling-for-the-beginners/blob/master/Images/pipeline1.png)
