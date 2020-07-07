@@ -76,7 +76,5 @@ In most cases, these packages can be downloaded and built using this pattern:
 
 ~~~
 git clone https://github.com/lh3/bwa.git 
-./bwa index ref.fa
-./bwa mem ref.fa read-se.fq.gz | gzip -3 > aln-se.sam.gz
-./bwa mem ref.fa read1.fq read2.fq | gzip -3 > aln-pe.sam.gz
+cd bwa; make
 ~~~
