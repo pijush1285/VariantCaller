@@ -171,4 +171,8 @@ tabix -p vcf Final_merged_variants1.vcf.gz
 bedtools jaccard -a snpOriginal.vcf.gz -b Final_merged_variants1.vcf.gz
 
 
+#Intersect between processed one and the origianl
+bedtools intersect -u -a snpOriginal.vcf.gz -b Final_merged_variants1.vcf.gz | wc -l
+
+
 
