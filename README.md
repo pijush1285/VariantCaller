@@ -79,4 +79,4 @@ git clone https://github.com/lh3/bwa.git
 cd bwa; make
 ~~~
 
-Images/pipeline1.png
+[](Images/pipeline1.png)
