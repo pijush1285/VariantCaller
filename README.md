@@ -65,4 +65,15 @@ It is required to put a glance in the Fastq files. After that continue the proce
 $./variantCaller_v2.sh
 ~~~
 
+Here, two more pipelines are included, which are very simple pipelines for calling variants.
+The name of those pipelines are 1) BWA_samtools_bcftools.sh and 2) BWA_Gatk_v2.sh.
 
+
+In most cases, these packages can be downloaded and built using this pattern:
+
+~~
+git clone https://github.com/lh3/bwa.git 
+./bwa index ref.fa
+./bwa mem ref.fa read-se.fq.gz | gzip -3 > aln-se.sam.gz
+./bwa mem ref.fa read1.fq read2.fq | gzip -3 > aln-pe.sam.gz
+~~
