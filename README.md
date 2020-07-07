@@ -78,3 +78,5 @@ In most cases, these packages can be downloaded and built using this pattern:
 git clone https://github.com/lh3/bwa.git 
 cd bwa; make
 ~~~
+
+Images/pipeline1.png
