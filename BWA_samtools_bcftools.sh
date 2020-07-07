@@ -126,7 +126,7 @@ tabix -p vcf snp34.vcf.gz
 
 #If your package is install in conda you can use the code given below. 
 #Now to know how many SNPs is there in the file.
-bedtools intersect -u -a snp.vcf.gz -b snp34.vcf.gz | wc -l
+bcftools view -v snps snp12.vcf | grep -v "^#" | wc -l
 
 
 #Calculate Jaccard index. This code is used for calculating the intersection between two files.
