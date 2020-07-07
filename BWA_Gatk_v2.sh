@@ -96,7 +96,7 @@ echo "-------------------------------------------"
 
 
 #Creating the index file   
-jAdd replace Groupava -jar $picard BuildBamIndex \
+java -jar $picard BuildBamIndex \
       I="$r1"_"$r2"_RG_bwa.bam
 	  
 echo "-------------------------------------------"
