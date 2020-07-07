@@ -118,8 +118,12 @@ $bcftools view output_1000000snps.vcf -Oz -o fileOriginal.vcf.gz
 $bcftools view -v snps fileR1R2.vcf.gz | perl -lane 'if (/^#/) { print } elsif (length($F[3]) == 1) { print }' | bgzip > snp12.vcf.gz
 $bcftools view -v snps fileR3R4.vcf.gz | perl -lane 'if (/^#/) { print } elsif (length($F[3]) == 1) { print }' | bgzip > snp34.vcf.gz
 
- 
-#Now indexing can be done using the code given below.
+
+#bgzip and tabix
+#We can speed up random access to VCF files by compressing them with bgzip, in the htslib package. bgzip is a "block-based GZIP", 
+#which compresses files in chunks of lines. This chunking let's us quickly seek to a particular part of the file, 
+#and support indexes to do so.
+bgzip snp12.vcf # makes snp12.vcf.gz
 tabix -p vcf snp12.vcf.gz
 tabix -p vcf snp34.vcf.gz
 
