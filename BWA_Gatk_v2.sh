@@ -8,7 +8,7 @@ echo -e "                                                                       
 echo -e "-----------------------------------------------------------------------------"
 
 
-# The code given below will ask the names of the reference file, read 1 and read 2 files.
+#The code given below will ask the names of the reference file, read 1 and read 2 files.
 read -p " enter your Reference:" Re1
 read -p " enter the Read 1:" r1
 read -p " enter the Read 2:" r2
@@ -23,7 +23,6 @@ echo "All the sample files are taken as an Input"
 echo "-------------------------------------------"
 
 
-
 #Location of the tools. Those location of the tools provided here is situated in our server.
 #The user must have to insert the location of the tools where the packages are installed.
 #You may use conda, in that case you do not have to specify where the tools are located.
@@ -32,8 +31,6 @@ samtools=/data/sata_data/workshop/wsu28/packages/samtools1/samtools/samtools
 bcftools=/data/sata_data/workshop/wsu28/packages/samtools1/bcftools/bcftools
 picard=/data/sata_data/workshop/wsu28/packages/picard/build/libs/picard.jar
 gatk=/data/sata_data/workshop/wsu28/packages/gatk/gatk
-
-
 
 
 #Now create the index of the reference file using bwa. 
@@ -98,7 +95,6 @@ echo "Add replace group operation is performed"
 echo "-------------------------------------------"
 
 
-
 #Creating the index file   
 jAdd replace Groupava -jar $picard BuildBamIndex \
       I="$r1"_"$r2"_RG_bwa.bam
@@ -106,8 +102,6 @@ jAdd replace Groupava -jar $picard BuildBamIndex \
 echo "-------------------------------------------"
 echo "Index file is created"
 echo "-------------------------------------------"
-
-
 
 
 #Index file generate of the reference file.
@@ -118,7 +112,6 @@ java -jar $picard CreateSequenceDictionary \
 echo "-------------------------------------------"
 echo "Index file of the reference file is done"
 echo "-------------------------------------------"
-
 
 
 #Variant call. Using the code given below you can call the variants.
@@ -143,12 +136,10 @@ echo "Merged the vcf files and removing the duplicates"
 echo "-------------------------------------------"
 
 
-
 #the code given below can be used for Indel detection.
 #variant_Sepration_Indel_SNV
 #vcftools --vcf output/"$r1"/BWA_GATK_"$r1".vcf --remove-indels --recode --recode-INFO-all --out output/"$r1"/BWA_GATK_SNP_"$r1".vcf
 #vcftools --vcf output/"$r1"/BWA_GATK_"$r1".vcf --keep-only-indels  --recode --recode-INFO-all --out output/"$r1"/BWA_GATK_Indels_"$r1".vcf
-
 
 
 #Few code given below for compering vcf files.
@@ -158,7 +149,6 @@ bcftools view -v snps NRead1.fq_BWA_GATK_NRead2.fq.vcf.gz | grep -v "^#" | wc -l
 bcftools view -v snps NRead3.fq_BWA_GATK_NRead4.fq.vcf.gz | grep -v "^#" | wc -l
 
 
-
 #This code is also required.
 bcftools view -v snps Final_merged_variants1.vcf | perl -lane 'if (/^#/) { print } elsif 
 (length($F[3]) == 1) { print }' | bgzip > Final_merged_variants1.vcf.gz
@@ -166,6 +156,7 @@ bcftools view -v snps Final_merged_variants1.vcf | perl -lane 'if (/^#/) { print
 
 #Index
 tabix -p vcf Final_merged_variants1.vcf.gz
+
 
 #Calculate Jaccard index
 bedtools jaccard -a snpOriginal.vcf.gz -b Final_merged_variants1.vcf.gz
