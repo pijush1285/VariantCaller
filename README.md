@@ -29,13 +29,12 @@ In most cases, these packages can be downloaded and built using this pattern:
 The goal of GATK4 is to bring together well-established GATK and Picard codebase tools within a streamlined framework and to enable selected tools to run massively parallel on local clusters or in the cloud using Apache Spark.
 
 ## Quick Start Guide
-
 ~~~
-+ *Build the GATK: ./gradlew bundle (creates gatk-VERSION.zip in build/)* 
-+ *Get help on running the GATK: ./gatk --help*
-+ *Get a list of available tools: ./gatk --list*
-+ *Run a tool: ./gatk PrintReads -I src/test/resources/NA12878.chr17_69k_70k.dictFix.bam -O output.bam*
-+ *Get help on a particular tool: ./gatk PrintReads --help*
+Build the GATK: ./gradlew bundle (creates gatk-VERSION.zip in build/)
+Get help on running the GATK: ./gatk --help
+Get a list of available tools: ./gatk --list
+Run a tool: ./gatk PrintReads -I src/test/resources/NA12878.chr17_69k_70k.dictFix.bam -O output.bam
+Get help on a particular tool: ./gatk PrintReads --help
 ~~~
 
 
