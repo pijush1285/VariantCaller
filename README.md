@@ -24,6 +24,24 @@ In this section I enlist the tools which are used for variant calling operation.
 + **FastQC** (*Download Url: https://github.com/s-andrews/FastQC*)
 + **MultiQC** (*Download Url: https://github.com/ewels/MultiQC*)
 
+In most cases, these packages can be downloaded and built using this pattern:
+
+The goal of GATK4 is to bring together well-established GATK and Picard codebase tools within a streamlined framework and to enable selected tools to run massively parallel on local clusters or in the cloud using Apache Spark.
+
+##Quick Start Guide
+
+Build the GATK: ./gradlew bundle (creates gatk-VERSION.zip in build/)
+Get help on running the GATK: ./gatk --help
+Get a list of available tools: ./gatk --list
+Run a tool: ./gatk PrintReads -I src/test/resources/NA12878.chr17_69k_70k.dictFix.bam -O output.bam
+Get help on a particular tool: ./gatk PrintReads --help
+
+
+~~~
+git clone https://github.com/lh3/bwa.git 
+cd bwa; make
+~~~
+
 
 <font size="5">**2. DATA SETS**</font>
 
@@ -72,12 +90,7 @@ Here, two more pipelines are included, which are very simple pipelines for calli
 The name of those pipelines are 1) BWA_samtools_bcftools.sh and 2) BWA_Gatk_v2.sh.
 
 
-In most cases, these packages can be downloaded and built using this pattern:
 
-~~~
-git clone https://github.com/lh3/bwa.git 
-cd bwa; make
-~~~
 
 <font size="5">**5. BWA, Samtools and Bcftools based pipeline**</font>
 <img src="Images/pipeline1.png">
