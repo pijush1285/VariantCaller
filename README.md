@@ -26,7 +26,7 @@ In this section I enlist the tools which are used for variant calling operation.
 
 In most cases, these packages can be downloaded and built using this pattern:
 
-+ **GATK**<br/>
++ **GATK**  
 The goal of GATK4 is to bring together well-established GATK and Picard codebase tools within a streamlined framework and to enable selected tools to run massively parallel on local clusters or in the cloud using Apache Spark.
 
  *Quick Start Guide*
