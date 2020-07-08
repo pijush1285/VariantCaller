@@ -26,8 +26,8 @@ In this section I enlist the tools which are used for variant calling operation.
 
 In most cases, these packages can be downloaded and built using this pattern:
 
-+ **GATK**
-+ The goal of GATK4 is to bring together well-established GATK and Picard codebase tools within a streamlined framework and to enable selected tools to run massively parallel on local clusters or in the cloud using Apache Spark.
++ **GATK**\
+The goal of GATK4 is to bring together well-established GATK and Picard codebase tools within a streamlined framework and to enable selected tools to run massively parallel on local clusters or in the cloud using Apache Spark.
 
  *Quick Start Guide*
 ~~~
@@ -38,8 +38,8 @@ Run a tool: ./gatk PrintReads -I src/test/resources/NA12878.chr17_69k_70k.dictFi
 Get help on a particular tool: ./gatk PrintReads --help
 ~~~
 
-+ **picard**
-+ Using the HTSJDK Java library HTSJDK, Picard supports accessing file formats widely used for high-throughput sequencing data such as SAM and VCF.
++ **picard**\
+Using the HTSJDK Java library HTSJDK, Picard supports accessing file formats widely used for high-throughput sequencing data such as SAM and VCF.
 
 Building Picard
 First, clone the repo:
