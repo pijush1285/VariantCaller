@@ -28,7 +28,7 @@ In most cases, these packages can be downloaded and built using this pattern:
 
 The goal of GATK4 is to bring together well-established GATK and Picard codebase tools within a streamlined framework and to enable selected tools to run massively parallel on local clusters or in the cloud using Apache Spark.
 
-## Quick Start Guide
+ *Quick Start Guide*
 ~~~
 Build the GATK: ./gradlew bundle (creates gatk-VERSION.zip in build/)
 Get help on running the GATK: ./gatk --help
@@ -37,7 +37,30 @@ Run a tool: ./gatk PrintReads -I src/test/resources/NA12878.chr17_69k_70k.dictFi
 Get help on a particular tool: ./gatk PrintReads --help
 ~~~
 
+Using the HTSJDK Java library HTSJDK, Picard supports accessing file formats widely used for high-throughput sequencing data such as SAM and VCF.
 
+Building Picard
+First, clone the repo:
+~~~
+    git clone https://github.com/broadinstitute/picard.git
+    cd picard/
+~~~    
+Picard is now built using gradle. A wrapper script (gradlew) is included which will download the appropriate version of gradle on the first invocation.
+
+To build a fully-packaged, runnable Picard jar with all dependencies included, run:
+~~~
+    ./gradlew shadowJar
+~~~
+The resulting jar will be in build/libs. To run it, the command is:
+~~~   
+   java -jar build/libs/picard.jar
+   or  
+   java -jar build/libs/picard-<VERSION>-all.jar 
+~~~   
+To build a jar containing only Picard classes (without its dependencies), run:
+~~~
+    ./gradlew jar 
+~~~
 ~~~
 git clone https://github.com/lh3/bwa.git 
 cd bwa; make
