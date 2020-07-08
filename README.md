@@ -30,11 +30,13 @@ The goal of GATK4 is to bring together well-established GATK and Picard codebase
 
 ## Quick Start Guide
 
+~~~
 + *Build the GATK: ./gradlew bundle (creates gatk-VERSION.zip in build/)* 
 + *Get help on running the GATK: ./gatk --help*
 + *Get a list of available tools: ./gatk --list*
 + *Run a tool: ./gatk PrintReads -I src/test/resources/NA12878.chr17_69k_70k.dictFix.bam -O output.bam*
 + *Get help on a particular tool: ./gatk PrintReads --help*
+~~~
 
 
 ~~~
