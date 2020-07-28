@@ -88,6 +88,16 @@ cd bwa; make
 
 + **bamtools**
 
+bamtools is a project that includes both a C++ API and a toolkit for reading, writing and editing BAM (genome alignment) files on command line.
+
+To build and install bamtools type the following commands given below.
+~~~
+$ mkdir build
+$ cd build
+$ cmake -DCMAKE_INSTALL_PREFIX=/my/install/dir ..
+$ make
+$ make DESTDIR=/my/stage/dir install
+~~~  
 
 <font size="5">**2. DATA SETS**</font>
 
