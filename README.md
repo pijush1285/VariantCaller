@@ -77,6 +77,10 @@ the package's source and type the following commands:
 ~~~      
     
 + **bwa**
+
+BWA is a software package for mapping DNA sequences against a large reference genome, such as the human genome. It consists of three algorithms: BWA-backtrack, BWA-SW and BWA-MEM. 
+
+To build and install bwa, 'cd' to the bwa directory containing the package's source and type 'make'.
 ~~~
 git clone https://github.com/lh3/bwa.git 
 cd bwa; make
