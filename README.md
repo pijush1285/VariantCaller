@@ -44,24 +44,24 @@ Using the HTSJDK Java library HTSJDK, Picard supports accessing file formats wid
 Building Picard
 First, clone the repo:
 ~~~
-    git clone https://github.com/broadinstitute/picard.git
-    cd picard/
+$ git clone https://github.com/broadinstitute/picard.git
+$ cd picard/
 ~~~    
 Picard is now built using gradle. A wrapper script (gradlew) is included which will download the appropriate version of gradle on the first invocation.
 
 To build a fully-packaged, runnable Picard jar with all dependencies included, run:
 ~~~
-    ./gradlew shadowJar
+$ ./gradlew shadowJar
 ~~~
 The resulting jar will be in build/libs. To run it, the command is:
 ~~~   
-   java -jar build/libs/picard.jar
+$ java -jar build/libs/picard.jar
    or  
-   java -jar build/libs/picard-<VERSION>-all.jar 
+$ java -jar build/libs/picard-<VERSION>-all.jar 
 ~~~   
 To build a jar containing only Picard classes (without its dependencies), run:
 ~~~
-    ./gradlew jar 
+$ ./gradlew jar 
 ~~~
 
 + **samtools**
@@ -71,9 +71,9 @@ SAMtools is a set of utilities for interacting with and post-processing short DN
 To build and install Samtools, 'cd' to the samtools-1.x directory containing
 the package's source and type the following commands:
 ~~~  
-    ./configure
-    make
-    make install
+$ ./configure
+$ make
+$ make install
 ~~~      
     
 + **bwa**
@@ -82,8 +82,8 @@ BWA is a software package for mapping DNA sequences against a large reference ge
 
 To build and install bwa, 'cd' to the bwa directory containing the package's source and type 'make'.
 ~~~
-git clone https://github.com/lh3/bwa.git 
-cd bwa; make
+$ git clone https://github.com/lh3/bwa.git 
+$ cd bwa; make
 ~~~
 
 + **bamtools**
@@ -136,7 +136,7 @@ This pipeline works very simply, executing various functions from different pack
 It is required to put a glance in the Fastq files. After that continue the processing. 
 
 ~~~
-$./variantCaller_v2.sh
+$ ./variantCaller_v2.sh
 ~~~
 
 
