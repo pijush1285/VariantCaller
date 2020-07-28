@@ -66,6 +66,16 @@ To build a jar containing only Picard classes (without its dependencies), run:
 
 + **samtools**
 
+SAMtools is a set of utilities for interacting with and post-processing short DNA sequence read alignments in the SAM (Sequence Alignment/Map), BAM (Binary Alignment/Map) and CRAM formats, written by Heng Li. These files are generated as output by short read aligners like BWA.
+
+To build and install Samtools, 'cd' to the samtools-1.x directory containing
+the package's source and type the following commands:
+~~~  
+    ./configure
+    make
+    make install
+~~~      
+    
 + **bwa**
 ~~~
 git clone https://github.com/lh3/bwa.git 
