@@ -1,4 +1,4 @@
-# Variant calling for the beginners
+# Variant calling pipelines for the beginners
 
 **Variant Calling:**
 
