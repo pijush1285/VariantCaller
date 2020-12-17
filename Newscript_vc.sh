@@ -20,8 +20,8 @@ prefix=pat014_B_L3
 #cd "$prefix"
 
 Re1=/data/sata_data/workshop/wsu28/reference19/hg19.fa
-r1=/data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs/pat014_B/pat014_B_TruSeq_AC4L8TACXX_L3_R1.fastq.gz
-r2=/data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs/pat014_B/pat014_B_TruSeq_AC4L8TACXX_L3_R2.fastq.gz
+r1=/data/human_wgs/pat014_B/pat014_B_TruSeq_AC4L8TACXX_L3_R1.fastq.gz
+r2=/data/human_wgs/pat014_B/pat014_B_TruSeq_AC4L8TACXX_L3_R2.fastq.gz
 
 
 #The alignment operation is performed using the code given below.
