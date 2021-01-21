@@ -96,3 +96,27 @@ gatk --java-options "-Xmx4g" HaplotypeCaller \
 done
 
 # https://gatk.broadinstitute.org/hc/en-us/articles/360036899732-GenotypeGVCFs
+
+
+# Now for Combining all those VCF files the code is given below.
+gatk CombineGVCFs \
+-R /data/sata_data/workshop/wsu28/reference19/hg19.fa \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L1/pat014_B_L8a.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L1a/pat014_B_L1a.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L2/pat014_B_L2.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L3/pat014_B_L3.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L4/pat014_B_L4.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L5/pat014_B_L5.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L6/pat014_B_L6.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L7/pat014_B_L7.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L8/pat014_B_L8.g.vcf.gz \
+--variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L8a/pat014_B_L1.g.vcf.gz \
+-O Cohot_pat014_B.g.vcf.gz
+
+
+# Now the gVCF need to be converted in to VCF files. The code is given below. 
+gatk --java-options "-Xmx4g" GenotypeGVCFs \
+   -R /data/sata_data/workshop/wsu28/reference19/hg19.fa \
+   -V Cohot_pat014_B.g.vcf.gz \
+   -O Final_pat014.vcf.gz
+   
