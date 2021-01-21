@@ -121,7 +121,6 @@ done
 
 
 # Now for Combining all those VCF files the code is given below.
-
 gatk CombineGVCFs \
 -R /data/sata_data/workshop/wsu28/reference19/hg19.fa \
 --variant /data/sata_data/workshop/wsu28/NidhanDaTask/human_wgs_cv/pat014_B/pat014_B_L1/pat014_B_L8a.g.vcf.gz \
@@ -138,7 +137,6 @@ gatk CombineGVCFs \
 
 
 # Now the gVCF need to be converted in to VCF files. The code is given below. 
-
 gatk --java-options "-Xmx4g" GenotypeGVCFs \
    -R /data/sata_data/workshop/wsu28/reference19/hg19.fa \
    -V Cohot_pat014_B.g.vcf.gz \
